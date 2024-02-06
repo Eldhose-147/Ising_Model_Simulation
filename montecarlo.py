@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-L=50
+L=5
 T=1
 ising=np.zeros((L,L),dtype=float)
 
@@ -11,7 +11,7 @@ for i in range(L):
             ising[i][j]=-1
         else:
             ising[i][j]=1
-
+            
 J=1
 E=0
 M=0
@@ -33,7 +33,7 @@ print(M,E)
 
 E*=0.5
 
-N=10000
+N=100000
 ener=[]
 mag=[]
 for n in range(N):
