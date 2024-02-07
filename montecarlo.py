@@ -1,17 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from RandomSpin import randomIsing
 L=5
 T=1
-ising=np.zeros((L,L),dtype=float)
-
-for i in range(L):
-    for j in range(L):
-        p=np.random.uniform(0,1)
-        if (p<0.5):
-            ising[i][j]=-1
-        else:
-            ising[i][j]=1
-            
+ising=randomIsing(L)         
 J=1
 E=0
 M=0
@@ -33,7 +25,7 @@ print(M,E)
 
 E*=0.5
 
-N=100000
+N=1000
 ener=[]
 mag=[]
 for n in range(N):
