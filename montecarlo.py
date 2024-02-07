@@ -1,39 +1,20 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from RandomSpin import randomIsing
-L=5
+from InitEnergy import Ener
+L=10
 T=1
 ising=randomIsing(L)         
 J=1
-E=0
-M=0
-for i in range (L):
-    for j in range (L):
-        a,b,c,d=i+1,i-1,j+1,j-1
-        if i==L-1:
-            a=0
-        if i==0:
-            b=L-1
-        if j==L-1:
-            c=0
-        if j==0:
-            d=L-1
-    
-        M+=ising[i][j]
-        E=E-J*float(ising[i][j]*(ising[a][j]+ising[b][j]+ising[i][c]+ising[i][d]))
+M,E=Ener(ising,L,J)
 print(M,E)
-
 E*=0.5
-
 N=1000
 ener=[]
 mag=[]
 for n in range(N):
-   
-
     for k in range(L):
         for l in range (L):
-            
             r=np.random.uniform(0,1)
             i=int(r*(L-1))
             t=np.random.uniform(0,1)

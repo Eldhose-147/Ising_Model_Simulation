@@ -1,6 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
-
 
 def randomIsing(L):
     ising=np.zeros((L,L),dtype=float)
@@ -13,5 +11,3 @@ def randomIsing(L):
                 ising[i][j]=1
     return (ising)
 
-x=randomIsing(9)
-print(x[4][8])
