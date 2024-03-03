@@ -9,7 +9,6 @@ y=np.random.default_rng().uniform(-1, 1, iterations)
 count=0
 pi_value=[]
 x_value=np.arange(0,iterations,1)
-
 for i in range(iterations):  
     x1=x[i]
     y1=y[i]
